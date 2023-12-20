@@ -7,8 +7,15 @@ from user import User
 from event import Event
 from comment import Comment
 from report import Report
+from meal_plan import MealPlan
+from meals import Meals
+from ingredients import Ingredients
+from allergens import Allergens
+from meals_plans import MealsPlans
+from allergens_plan import AllergensPlan
+from allergens_ingredients import AllergensIngredients
+from ingredients_meal import IngredientsMeal
 
-# Base = declarative_base()
 
 # Define your database connection
 engine = create_engine('postgresql://postgres:toor@localhost:5432/projektpo', echo=True)
