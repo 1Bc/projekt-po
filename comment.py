@@ -1,4 +1,6 @@
 from sqlalchemy import Column, String, Integer, Date, ForeignKey
+from sqlalchemy.orm import relationship
+
 from base import Base
 
 
@@ -8,6 +10,8 @@ class Comment(Base):
     id = Column(Integer, primary_key=True)
     event_id = Column(Integer)
     description = Column(String)
+
+    event = relationship('Event', back_populates='comments')
 
 
 def __init__(self, event_id, description):

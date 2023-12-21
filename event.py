@@ -1,4 +1,6 @@
-from sqlalchemy import Column, String, Integer, Date, Enum
+from sqlalchemy import Column, String, Integer, Date, Enum, ForeignKey
+from sqlalchemy.orm import relationship
+
 from base import Base
 
 
@@ -14,8 +16,11 @@ class Event(Base):
     attendee_id = Column(Integer)
     creator_id = Column(Integer)
     event_type = Column(Enum('trening', 'spotkanie', 'wizyta lekarska', 'wydarzenie sportowe', name='type_enum'))
-    report_id = Column(Integer)
-    comment_id = Column(Integer)
+    report_id = Column(Integer, ForeignKey('reports.id'))
+    comment_id = Column(Integer, ForeignKey('comments.id'))
+
+    report = relationship('Report', back_populates='events')
+    comment = relationship('Comment', back_populates='comments')
 
 
 def __init__(self, start_time, end_time, place, color, minutes_before, attendee_id, creator_id, event_type):
