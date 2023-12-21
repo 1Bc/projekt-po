@@ -12,7 +12,6 @@ from meals import Meals
 from ingredients import Ingredients
 from allergens import Allergens
 from allergens_ingredients import AllergensIngredients
-from ingredients_meal import IngredientsMeal
 
 
 # Define your database connection
