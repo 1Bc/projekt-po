@@ -9,6 +9,12 @@ meals_plans_association = Table(
     Column('plan_id', Integer, ForeignKey('meal_plans.id'))
 )
 
+allergens_plan_association = Table(
+    'allergens_plan', Base.metadata,
+    Column('allergen_id', Integer, ForeignKey('allergens.id')),
+    Column('plan_id', Integer, ForeignKey('meal_plans.id'))
+)
+
 
 class MealPlan(Base):
     __tablename__ = 'meal_plans'
@@ -18,6 +24,7 @@ class MealPlan(Base):
     meals_amount = Column(Integer)
     description = Column(String)
     meals = relationship("Meal", secondary=meals_plans_association)
+    allergens = relationship("Allergens", secondary=allergens_plan_association)
 
 
 def __init__(self, calories, meals_amount, description):
