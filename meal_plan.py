@@ -1,5 +1,13 @@
-from sqlalchemy import Column, String, Integer, Date, ForeignKey
+from sqlalchemy import Column, String, Integer, Date, ForeignKey, Table
+from sqlalchemy.orm import relationship
+
 from base import Base
+
+meals_plans_association = Table(
+    'meals_plans', Base.metadata,
+    Column('meal_id', Integer, ForeignKey('meals.id')),
+    Column('plan_id', Integer, ForeignKey('meal_plans.id'))
+)
 
 
 class MealPlan(Base):
@@ -9,6 +17,7 @@ class MealPlan(Base):
     calories = Column(Integer)
     meals_amount = Column(Integer)
     description = Column(String)
+    meals = relationship("Meal", secondary=meals_plans_association)
 
 
 def __init__(self, calories, meals_amount, description):

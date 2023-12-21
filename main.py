@@ -11,8 +11,6 @@ from meal_plan import MealPlan
 from meals import Meals
 from ingredients import Ingredients
 from allergens import Allergens
-from meals_plans import MealsPlans
-from allergens_plan import AllergensPlan
 from allergens_ingredients import AllergensIngredients
 from ingredients_meal import IngredientsMeal
 
