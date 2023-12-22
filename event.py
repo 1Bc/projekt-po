@@ -18,9 +18,11 @@ class Event(Base):
     event_type = Column(Enum('trening', 'spotkanie', 'wizyta lekarska', 'wydarzenie sportowe', name='type_enum'))
     report_id = Column(Integer, ForeignKey('reports.id'))
     comment_id = Column(Integer, ForeignKey('comments.id'))
+    meals_plan_id = Column(Integer, ForeignKey('meal_plans.id'))
 
     report = relationship('Report', back_populates='events')
     comment = relationship('Comment', back_populates='comments')
+    meals_plan = relationship('MealPlan', back_populates='events')
 
 
 def __init__(self, start_time, end_time, place, color, minutes_before, attendee_id, creator_id, event_type):

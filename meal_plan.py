@@ -26,6 +26,8 @@ class MealPlan(Base):
     meals = relationship("Meal", secondary=plans_meals_association)
     allergens = relationship("Allergens", secondary=allergens_plan_association)
 
+    events = relationship('Event', back_populates='meal_plans')
+
 
 def __init__(self, calories, meals_amount, description):
     self.calories = calories
