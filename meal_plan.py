@@ -3,8 +3,8 @@ from sqlalchemy.orm import relationship
 
 from base import Base
 
-meals_plans_association = Table(
-    'meals_plans', Base.metadata,
+plans_meals_association = Table(
+    'plans_meals', Base.metadata,
     Column('meal_id', Integer, ForeignKey('meals.id')),
     Column('plan_id', Integer, ForeignKey('meal_plans.id'))
 )
@@ -23,7 +23,7 @@ class MealPlan(Base):
     calories = Column(Integer)
     meals_amount = Column(Integer)
     description = Column(String)
-    meals = relationship("Meal", secondary=meals_plans_association)
+    meals = relationship("Meal", secondary=plans_meals_association)
     allergens = relationship("Allergens", secondary=allergens_plan_association)
 
 
