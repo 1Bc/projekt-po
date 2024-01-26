@@ -1,16 +1,6 @@
-import datetime
-from sqlalchemy import create_engine, Column, Integer, CHAR, DateTime, ForeignKey, String
-from sqlalchemy.orm import sessionmaker, declarative_base
-from base import Base
-
-from user import User
-from event import Event
-from comment import Comment
-from report import Report
-from meal_plan import MealPlan
-from meals import Meals
-from ingredients import Ingredients
-from allergens import Allergens
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from entity.base import Base
 
 
 # Define your database connection
