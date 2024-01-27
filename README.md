@@ -1,3 +1,5 @@
+# Events
+
 `GET /events` - get all events
 
 `POST /event` - create event
@@ -15,6 +17,8 @@
 }
 ```
 
+# Ingredients
+
 `POST /ingredients` - add ingredients
 
 ```json
@@ -28,4 +32,47 @@
         "calories": 16
     }
 ]
+```
+
+# Meals
+
+`GET /meals` - get all meals
+```json
+[
+    {
+        "calories": 500,
+        "id": 1
+    }
+]
+```
+
+`POST /meals` - add meal
+
+```json
+{
+    "name": "Chicken Salad",
+    "calories": 350,
+    "ingredients": [
+        {
+            "name": "Chicken",
+            "calories": 200
+        },
+        {
+            "name": "Lettuce",
+            "calories": 10
+        },
+        {
+            "name": "Tomatoes",
+            "calories": 20
+        },
+        {
+            "name": "Cucumbers",
+            "calories": 15
+        },
+        {
+            "name": "Salad Dressing",
+            "calories": 105
+        }
+    ]
+}
 ```
