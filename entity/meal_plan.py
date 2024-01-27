@@ -1,3 +1,6 @@
+from typing import List
+
+from pydantic import BaseModel
 from sqlalchemy import Column, String, Integer, Date, ForeignKey, Table
 from sqlalchemy.orm import relationship
 from entity.meals import Meals
@@ -38,3 +41,11 @@ def __init__(self, calories, meals_amount, description):
 
 def __repr__(self):
     return f"({self.id}) {self.calories} {self.meals_amount} {self.description}"
+
+
+class MealPlanCreate(BaseModel):
+    calories: int
+    meals_amount: int
+    description: str
+    meals: List[int]
+    allergens: List[int]
