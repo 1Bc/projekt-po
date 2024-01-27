@@ -4,8 +4,8 @@
 
 ```json
 {
-    "start_time": "2023-05-01T12:00:00",
-    "end_time": "2023-05-01T16:00:00",
+    "start_time": "2024-01-27T12:00:00",
+    "end_time": "2024-01-27T13:00:00",
     "place": "Gym",
     "color": "red",
     "minutes_before_event": 30,
@@ -13,4 +13,19 @@
     "creator_id": 2,
     "event_type": "trening"
 }
+```
+
+`POST /ingredients` - add ingredients
+
+```json
+[
+    {
+        "name": "Tomato",
+        "calories": 22
+    },
+    {
+        "name": "Cucumber",
+        "calories": 16
+    }
+]
 ```
