@@ -1,6 +1,24 @@
 # Events
 
 `GET /events` - get all events
+```json
+[
+    {
+        "id": 2,
+        "minutes_before_event": 30,
+        "creator_id": 2,
+        "report_id": null,
+        "meals_plan_id": null,
+        "start_time": "2023-05-01",
+        "end_time": "2023-05-01",
+        "place": "Gym",
+        "color": "red",
+        "attendee_id": 1,
+        "event_type": "trening",
+        "comment_id": null
+    }
+]
+```
 
 `POST /event` - create event
 
@@ -18,6 +36,21 @@
 ```
 
 # Ingredients
+`GET /ingredients` - get ingredients
+```json
+[
+    {
+        "calories": 200,
+        "id": 21,
+        "name": "Chicken"
+    },
+    {
+        "calories": 10,
+        "id": 22,
+        "name": "Lettuce"
+    }
+]
+```
 
 `POST /ingredients` - add ingredients
 
@@ -93,17 +126,29 @@
 ```
 
 `POST /report` - add report
-
 ```json
 {
     "first_name": "John",
     "last_name": "Doe",
     "description": "This is a sample report for testing purposes.",
-    "result": "Success"
+    "result": "sprained ankle"
 }
 ```
 
 # Meal Plans
+`GET /plans_meals` - get all meal plans
+```json
+[
+    {
+        "meal_id": 2,
+        "plan_id": null
+    },
+    {
+        "meal_id": 3,
+        "plan_id": null
+    }
+]
+```
 
 `POST /plans_meals` - add meal plans
 ```json
