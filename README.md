@@ -102,3 +102,13 @@
     "result": "Success"
 }
 ```
+
+# Meal Plans
+
+`POST /plans_meals` - add meal plans
+```json
+{
+    "meal_id": 3,
+    "plan_id": 2
+}
+```

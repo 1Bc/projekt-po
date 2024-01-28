@@ -43,6 +43,11 @@ def __repr__(self):
     return f"({self.id}) {self.calories} {self.meals_amount} {self.description}"
 
 
+class PlanMealCreate(BaseModel):
+    meal_id: int
+    plan_id: int = None
+
+
 class MealPlanCreate(BaseModel):
     calories: int
     meals_amount: int
