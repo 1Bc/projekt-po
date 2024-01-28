@@ -11,7 +11,7 @@ class Comment(Base):
     event_id = Column(Integer)
     description = Column(String)
 
-    event = relationship('Event', back_populates='comments')
+    events = relationship('Event', back_populates='comment')
 
 
 def __init__(self, event_id, description):

@@ -13,7 +13,7 @@ class Report(Base):
     description = Column(String)
     result = Column(String)
 
-    events = relationship('Event', back_populates='reports')
+    events = relationship('Event', back_populates='report')
 
 
 def __init__(self, first_name, last_name, description, result):

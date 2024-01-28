@@ -1,6 +1,7 @@
+from pydantic import BaseModel
 from sqlalchemy import Column, String, Integer, Date, ForeignKey, Table
 from sqlalchemy.orm import relationship
-
+from entity.ingredients import Ingredients
 from base import Base
 
 meals_ingredients_association = Table(
@@ -14,13 +15,21 @@ class Meals(Base):
     __tablename__ = 'meals'
 
     id = Column(Integer, primary_key=True)
+    name = Column(String)
     calories = Column(Integer)
     meals_ingredients_association = relationship("Ingredients", secondary=meals_ingredients_association)
 
 
-def __init__(self, calories):
+def __init__(self, name, calories):
+    self.name = name
     self.calories = calories
 
 
 def __repr__(self):
-    return f"({self.id}) {self.calories}"
+    return f"({self.id}) {self.name} {self.calories}"
+
+
+class MealsCreate(BaseModel):
+    name: str
+    calories: int
+    meals_ingredients_association: list[Ingredients]

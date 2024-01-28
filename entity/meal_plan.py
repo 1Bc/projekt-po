@@ -1,6 +1,7 @@
 from sqlalchemy import Column, String, Integer, Date, ForeignKey, Table
 from sqlalchemy.orm import relationship
-
+from entity.meals import Meals
+from entity.allergens import Allergens
 from base import Base
 
 plans_meals_association = Table(
@@ -23,7 +24,7 @@ class MealPlan(Base):
     calories = Column(Integer)
     meals_amount = Column(Integer)
     description = Column(String)
-    meals = relationship("Meal", secondary=plans_meals_association)
+    meals = relationship("Meals", secondary=plans_meals_association)
     allergens = relationship("Allergens", secondary=allergens_plan_association)
 
     events = relationship('Event', back_populates='meal_plans')
