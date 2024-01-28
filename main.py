@@ -3,6 +3,7 @@ from database import get_db
 from routes.event_routes import router as event_router
 from routes.ingredients_routes import router as ingredients_router
 from routes.meals_routes import router as meals_router
+from routes.report_routes import router as report_router
 
 db = Depends(get_db)
 
@@ -11,6 +12,7 @@ app = FastAPI()
 app.include_router(event_router)
 app.include_router(ingredients_router)
 app.include_router(meals_router)
+app.include_router(report_router)
 
 
 @app.get("/")

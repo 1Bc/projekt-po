@@ -76,3 +76,29 @@
     ]
 }
 ```
+
+# Reports
+
+`GET /reports` - get all reports
+```json
+[
+    {
+        "last_name": "Doe",
+        "result": "Success",
+        "first_name": "John",
+        "description": "This is a sample report for testing purposes.",
+        "id": 1
+    }
+]
+```
+
+`POST /report` - add report
+
+```json
+{
+    "first_name": "John",
+    "last_name": "Doe",
+    "description": "This is a sample report for testing purposes.",
+    "result": "Success"
+}
+```
