@@ -157,3 +157,23 @@
     "plan_id": 2
 }
 ```
+
+# Comment
+`GET /comments` - get all comments
+```json
+[
+    {
+        "event_id": 1,
+        "id": 1,
+        "description": "This is a comment."
+    }
+]
+```
+
+`POST /comment` - add comment
+```json
+{
+    "event_id": 1,
+    "description": "This is a comment."
+}
+```

@@ -5,6 +5,7 @@ from routes.ingredients_routes import router as ingredients_router
 from routes.meals_routes import router as meals_router
 from routes.report_routes import router as report_router
 from routes.meal_plan_routes import router as meal_plan_router
+from routes.comment_routes import router as comment_router
 
 db = Depends(get_db)
 
@@ -15,6 +16,7 @@ app.include_router(ingredients_router)
 app.include_router(meals_router)
 app.include_router(report_router)
 app.include_router(meal_plan_router)
+app.include_router(comment_router)
 
 
 @app.get("/")

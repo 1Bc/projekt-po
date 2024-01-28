@@ -1,6 +1,6 @@
 from sqlalchemy import Column, String, Integer, Date, ForeignKey
 from sqlalchemy.orm import relationship
-
+from pydantic import BaseModel
 from entity.base import Base
 
 
@@ -21,3 +21,8 @@ def __init__(self, event_id, description):
 
 def __repr__(self):
     return f"({self.id}) {self.event_id} {self.description}"
+
+
+class CommentCreate(BaseModel):
+    event_id: int
+    description: str
